@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>ФотоФантазія - молодим фотографам</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <header class="header">
+    <h1 class="logo">ФотоФантазія</h1>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="#home">Головна</a></li>
+        <li><a href="#about">Про бренд</a></li>
+        <li><a href="#services">Послуги</a></li>
+        <li><a href="#contact">Контакти</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section id="home" class="content-section">
+      <h2 class="section-title">Ласкаво просимо у ФотоФантазія</h2>
+      <p>Сучасний сайт для молодих фотографів, натхненний мінімалізмом Apple. Тут ви знайдете усі інструменти для росту вашого фото-бізнесу: від чудових портфоліо до зручних калькуляторів послуг.</p>
+      <p>Висока якість, пастельні акценти та темна естетика створюють атмосферу для творчості.</p>
+    </section>
+
+    <section id="about" class="content-section">
+      <h2 class="section-title">Про бренд</h2>
+      <p>ФотоФантазія виникла завдяки надзвичайно творчому фотолаборанту, який одного разу випадково залишив кота в темній кімнаті з десятком фотоапаратів. Коли кіт наплутався у дроти, апарати знімали самі себе, а потім вийшли на відчайдушний протест, вимагаючи випити пастельний лате! Внаслідок цих веселих хаотичних подій і з’явився бренд, який наповнив світ м'яким світлом і посмішками, знімаючи сюрреалістичні фото, які неможливо забути.</p>
+      <p>Ми поєднуємо сучасні технології з безмежною уявою, створюючи контент, про який ви навіть не мріяли.</p>
+    </section>
+
+    <section id="services" class="content-section">
+      <h2 class="section-title">Наші послуги та ціни</h2>
+      <p>Оберіть необхідні фотографічні послуги та дізнайтесь вартість у калькуляторі:</p>
+      <form id="calculator" class="calculator-form">
+        <table class="services-table">
+          <tr>
+            <th>Послуга</th>
+            <th>Ціна (грн)</th>
+            <th>Вибір</th>
+          </tr>
+          <tr>
+            <td>Базова фотосесія</td>
+            <td>1000</td>
+            <td><input type="checkbox" name="service" value="1000" class="service-checkbox"></td>
+          </tr>
+          <tr>
+            <td>Обробка RAW фото</td>
+            <td>500</td>
+            <td><input type="checkbox" name="service" value="500" class="service-checkbox"></td>
+          </tr>
+          <tr>
+            <td>Виїзд до клієнта</td>
+            <td>300</td>
+            <td><input type="checkbox" name="service" value="300" class="service-checkbox"></td>
+          </tr>
+          <tr>
+            <td>Друк фотографій</td>
+            <td>200</td>
+            <td><input type="checkbox" name="service" value="200" class="service-checkbox"></td>
+          </tr>
+        </table>
+        <p>Загальна сума: <span id="total">0</span> грн</p>
+      </form>
+    </section>
+
+    <section id="contact" class="content-section">
+      <h2 class="section-title">Контакти</h2>
+      <form id="contact-form" class="contact-form">
+        <label for="name">Ім'я:</label><br>
+        <input type="text" id="name" name="name" class="form-input" required><br>
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" class="form-input" required><br>
+        <label for="message">Повідомлення:</label><br>
+        <textarea id="message" name="message" class="form-textarea" rows="4" required></textarea><br>
+        <input type="submit" value="Відправити" class="btn">
+      </form>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <p>&copy; 2025 ФотоФантазія. Усі права захищені.</p>
+  </footer>
+
+  <script>
+    // Калькулятор вартості послуг
+    const checkboxes = document.querySelectorAll('.service-checkbox');
+    const totalSpan = document.getElementById('total');
+    function updateTotal() {
+      let total = 0;
+      checkboxes.forEach(cb => {
+        if (cb.checked) {
+          total += parseInt(cb.value);
+        }
+      });
+      totalSpan.textContent = total;
+    }
+    checkboxes.forEach(cb => cb.addEventListener('change', updateTotal));
+  </script>
+</body>
+</html>

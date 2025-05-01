@@ -1,0 +1,117 @@
+/* CSS Файл - styles.css */
+
+/* Основні кольори */
+:root {
+    --bg-color: #121212;      /* дуже темно-сірий фон */
+    --text-color: #E0E0E0;    /* світло-сірий текст */
+    --header-bg: #1c1c1c;     /* темний фон header */
+    --footer-bg: #1c1c1c;     /* темний фон footer */
+    --accent-blue: #88A2D0;   /* пастельний блакитний */
+    --accent-green: #8FD9A8;  /* пастельний зелений */
+    --accent-pink: #F7CAC9;   /* пастельний рожевий */
+    --table-bg: #1c1c1c;      /* фон заголовків таблиці */
+  }
+  
+  /* Темна тема */
+  body.dark-theme {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Header і навігація */
+  header.header {
+    background-color: var(--header-bg);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  header .logo {
+    font-size: 1.8em;
+    color: var(--accent-green);
+    margin: 0;
+  }
+  nav.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  nav.main-nav li {
+    display: inline;
+    margin-left: 15px;
+  }
+  nav.main-nav a {
+    color: var(--accent-blue);
+    text-decoration: none;
+    font-weight: bold;
+  }
+  nav.main-nav a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Розділи сайту */
+  .content-section {
+    padding: 40px 20px;
+  }
+  .section-title {
+    font-size: 1.5em;
+    color: var(--accent-pink);
+    margin-bottom: 10px;
+  }
+  
+  /* Таблиці */
+  .services-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+  }
+  .services-table th, .services-table td {
+    border: 1px solid #333;
+    padding: 8px;
+    text-align: left;
+  }
+  .services-table th {
+    background-color: var(--table-bg);
+    color: var(--accent-blue);
+  }
+  
+  /* Форми */
+  input.form-input, textarea.form-textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #444;
+    border-radius: 4px;
+    background-color: #2a2a2a;
+    color: var(--text-color);
+  }
+  input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent-green);
+  }
+  
+  /* Кнопки */
+  .btn {
+    padding: 10px 20px;
+    background-color: var(--accent-green);
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1em;
+    cursor: pointer;
+  }
+  .btn:hover {
+    background-color: var(--accent-pink);
+  }
+  
+  /* Footer */
+  footer.footer {
+    background-color: var(--footer-bg);
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+  
